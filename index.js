@@ -47,6 +47,8 @@ router.route("/search/:search_term")
                 (error, response, body) => {
                     if (!error && response.statusCode === 200) {
                         // The response was successful, now you can parse the HTML (or JSON/XML) whatever
+                        // for example:
+                        // let data = body.substring(body.indexOf('[CDATA[') + 7, body.indexOf(']]'));
                         console.log(body);
                         // resolve promise with response that you want to send back to the requester
                         resolve(body);
